@@ -1,1 +1,1 @@
-# proyectoReservaHoteleraX
+# proyectoReservaHotelera

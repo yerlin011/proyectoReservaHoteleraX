@@ -100,14 +100,6 @@ namespace CapaNegocio
             return dt;
         }
 
-        /// <summary>
-        /// Metodo llama y pasa valores al metodo DeshabilitarUsuario() de la capa de datos
-        /// </summary>
-        /// <param name="idUsuario"></param>
-        /// <param name="estado"></param>
-        public void DeshabilitarUsuario(string idUsuario, string estado)
-        {
-            objetoCD.Deshabilitar(Convert.ToInt32(idUsuario), Convert.ToBoolean(estado));
-        }
+       
     }
 }

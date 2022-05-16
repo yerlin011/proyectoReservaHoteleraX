@@ -125,25 +125,7 @@ namespace CapaDatos
 
         }
 
-        /// <summary>
-        /// Metodo permite colocar un usuario en estado false
-        /// </summary>
-        /// <param name="idUsuario"></param>
-        /// <param name="estado"></param>
-        public void Deshabilitar(int idUsuario, bool estado)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "SpCambiarEstadoUsuario";
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@Id", idUsuario);
-            comando.Parameters.AddWithValue("@EstadoUsuario", estado);
-
-
-            comando.ExecuteNonQuery();
-
-            comando.Parameters.Clear();
-        }
+       
     }
 
 }

@@ -44,36 +44,7 @@ namespace CapaPresentacion
            dataGridViewHabitaciones.DataSource = objeto.ListarHabitaciones();
            this.dataGridViewHabitaciones.Columns["idhabitacion"].Visible = false;
         }
-        private void MostrarCarreras()
-        {
-
-            //CN_Estudiantes objeto = new CN_Estudiantes();
-            //FormMantEstudiantes frm = new FormMantEstudiantes();
-            //frm.cbmCarrera.DataSource = objeto.MostrarCarr();
-            //frm.cbmCarrera.DisplayMember = "Nombre_Carrera";
-            //frm.cbmCarrera.ValueMember = "Id_Carrera";
-        }
-        private void MostrarMaterias()
-        {
-            //CN_Estudiantes objeto = new CN_Estudiantes();
-            //FormMantEstudiantes frm = new FormMantEstudiantes();
-
-            //frm.cmbMateria.DataSource = objeto.MostrarMate();
-            //frm.cmbMateria.DisplayMember = "Nombre_Materia";
-            //frm.cmbMateria.ValueMember = "Id_Materia";
-
-        }
-
-       
-        private void LimpiarForm()
-        {
-            //txtMatricula.Clear();
-            //txtNombre.Clear();
-            //txtApellido.Clear();
-            //cbmCarrera.Text = "Carrera";
-            //txtEstado.Clear();
-        }
-
+     
        
 
      

@@ -36,11 +36,10 @@ namespace CapaPresentacion
 
         private void FormMantTipoHabitacion_Load(object sender, EventArgs e)
         {
-            MostrarHoteles();
-            MostrarHabitaciones();
+           
         }
 
-        private void MostrarHoteles()
+        public void MostrarHoteles()
         {
 
             CN_TipoHabitacion objeto = new CN_TipoHabitacion();
@@ -50,7 +49,7 @@ namespace CapaPresentacion
             cmbHotel.ValueMember = "idhotel";
         }
 
-        private void MostrarHabitaciones()
+        public void MostrarHabitaciones()
         {
 
             CN_TipoHabitacion objeto = new CN_TipoHabitacion();

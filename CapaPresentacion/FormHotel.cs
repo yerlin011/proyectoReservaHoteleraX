@@ -43,46 +43,15 @@ namespace CapaPresentacion
             CN_Hotel objeto = new CN_Hotel();
             dataGridViewHoteles.DataSource = objeto.ListarHoteles();
             this.dataGridViewHoteles.Columns["idhotel"].Visible = false;
+            this.dataGridViewHoteles.Columns["ADMINISTRADORID"].Visible = false;
         }
-        private void MostrarCarreras()
-        {
-
-            //CN_Estudiantes objeto = new CN_Estudiantes();
-            //FormMantEstudiantes frm = new FormMantEstudiantes();
-            //frm.cbmCarrera.DataSource = objeto.MostrarCarr();
-            //frm.cbmCarrera.DisplayMember = "Nombre_Carrera";
-            //frm.cbmCarrera.ValueMember = "Id_Carrera";
-        }
-        private void MostrarMaterias()
-        {
-            //CN_Estudiantes objeto = new CN_Estudiantes();
-            //FormMantEstudiantes frm = new FormMantEstudiantes();
-
-            //frm.cmbMateria.DataSource = objeto.MostrarMate();
-            //frm.cmbMateria.DisplayMember = "Nombre_Materia";
-            //frm.cmbMateria.ValueMember = "Id_Materia";
-
-        }
-
        
-        private void LimpiarForm()
-        {
-            //txtMatricula.Clear();
-            //txtNombre.Clear();
-            //txtApellido.Clear();
-            //cbmCarrera.Text = "Carrera";
-            //txtEstado.Clear();
-        }
-
        
 
      
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
 
-            //CN_Empleado objbe = new CN_Empleado();
-            //dataGridView2.DataSource = objetoCN.BuscarEst(txtBuscar.Text);
-            //objetoCN.BuscarEst(txtMatricula.Text, txtNombre.Text);
         }
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
@@ -98,6 +67,7 @@ namespace CapaPresentacion
 
             FormMantHotel frm = new FormMantHotel();
             frm.Operacion = "Insertar";
+            frm.ListarNombresAdministradores();
             frm.ShowDialog();
             MostrarHoteles();
 
@@ -118,6 +88,7 @@ namespace CapaPresentacion
                 //EDITAR
               
                  frm.Operacion = "Editar";
+                 frm.ListarNombresAdministradores();
                
                 
                  frm.idHotel = dataGridViewHoteles.CurrentRow.Cells["idhotel"].Value.ToString();
@@ -130,7 +101,7 @@ namespace CapaPresentacion
                  frm.txtProvincia.Text = dataGridViewHoteles.CurrentRow.Cells["PROVINCIA"].Value.ToString();
                  frm.txtCodPostal.Text = dataGridViewHoteles.CurrentRow.Cells["CODPOSTAL"].Value.ToString();
                  frm.mskTelefono.Text = dataGridViewHoteles.CurrentRow.Cells["TELEFONO"].Value.ToString();
-                 frm.cmbAdministrador.Text = dataGridViewHoteles.CurrentRow.Cells["ADMINISTRADOR"].Value.ToString();
+                 frm.cmbAdministrador.SelectedValue = (dataGridViewHoteles.CurrentRow.Cells["ADMINISTRADORID"].Value);
                  frm.ShowDialog();
                  MostrarHoteles();
 

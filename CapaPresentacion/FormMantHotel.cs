@@ -36,10 +36,10 @@ namespace CapaPresentacion
 
         private void FormMantHotel_Load(object sender, EventArgs e)
         {
-            ListarNombresAdministradores();
+           
         }
 
-        private void ListarNombresAdministradores()
+        public void ListarNombresAdministradores()
         {
             cmbAdministrador.DataSource = objetoCN.ListarNombresAdministradores();
             cmbAdministrador.DisplayMember = "nombre";

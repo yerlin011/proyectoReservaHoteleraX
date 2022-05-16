@@ -44,6 +44,11 @@ namespace CapaPresentacion
             CN_Reserva objeto = new CN_Reserva();
             dataGridViewReservas.DataSource = objeto.ListarReservas();
             this.dataGridViewReservas.Columns["idreserva"].Visible = false;
+            this.dataGridViewReservas.Columns["CLIENTEID"].Visible = false;
+            this.dataGridViewReservas.Columns["USUARIOID"].Visible = false;
+            this.dataGridViewReservas.Columns["HOTELID"].Visible = false;
+            this.dataGridViewReservas.Columns["HABITACIONID"].Visible = false;
+          
         }
        
        
@@ -61,6 +66,10 @@ namespace CapaPresentacion
 
             FormMantReserva frm = new FormMantReserva();
             frm.Operacion = "Insertar";
+            frm.MostrarClientes();
+            frm.MostrarUsuarios();
+            frm.MostrarHoteles();
+            frm.MostrarHabitaciones();
             frm.ShowDialog();
             MostrarReservas();
 
@@ -81,8 +90,12 @@ namespace CapaPresentacion
                 //EDITAR
               
                  frm.Operacion = "Editar";
-               
-                
+                 frm.MostrarClientes();
+                 frm.MostrarUsuarios();
+                 frm.MostrarHoteles();
+                 frm.MostrarHabitaciones();
+
+
                  frm.idReserva = dataGridViewReservas.CurrentRow.Cells["idreserva"].Value.ToString();
                  frm.dtFechaInicio.Text = dataGridViewReservas.CurrentRow.Cells["FECHAINICIO"].Value.ToString();
                  frm.dtFechaFin.Text = dataGridViewReservas.CurrentRow.Cells["FECHAFIN"].Value.ToString();
@@ -90,10 +103,11 @@ namespace CapaPresentacion
                  frm.ocupacion.Text = dataGridViewReservas.CurrentRow.Cells["OCUPACION"].Value.ToString();
                  frm.txtNombreTomador.Text = dataGridViewReservas.CurrentRow.Cells["NOMBRETOMADOR"].Value.ToString();
                  frm.cantidad.Text = dataGridViewReservas.CurrentRow.Cells["CANTIDAD"].Value.ToString();
-                 frm.cmbCliente.Text = dataGridViewReservas.CurrentRow.Cells["CLIENTE"].Value.ToString();
-                 frm.cmbUsuario.Text = dataGridViewReservas.CurrentRow.Cells["USUARIO"].Value.ToString();
-                 frm.cmbHotel.Text = dataGridViewReservas.CurrentRow.Cells["HOTEL"].Value.ToString();
-                 frm.cmbHabitacion.Text = dataGridViewReservas.CurrentRow.Cells["HABITACION"].Value.ToString();
+
+                 frm.cmbCliente.SelectedValue = dataGridViewReservas.CurrentRow.Cells["CLIENTEID"].Value;
+                 frm.cmbUsuario.SelectedValue = dataGridViewReservas.CurrentRow.Cells["USUARIOID"].Value;
+                 frm.cmbHotel.SelectedValue = dataGridViewReservas.CurrentRow.Cells["HOTELID"].Value;
+                 frm.cmbHabitacion.SelectedValue = dataGridViewReservas.CurrentRow.Cells["HABITACIONID"].Value;
 
 
 

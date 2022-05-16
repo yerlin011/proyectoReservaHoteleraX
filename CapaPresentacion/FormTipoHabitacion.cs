@@ -44,9 +44,12 @@ namespace CapaPresentacion
             CN_TipoHabitacion objeto = new CN_TipoHabitacion();
             dataGridViewTipoHabitaciones.DataSource = objeto.ListarTipoHabitaciones();
             this.dataGridViewTipoHabitaciones.Columns["tipoHabitacion_id"].Visible = false;
+            this.dataGridViewTipoHabitaciones.Columns["HOTELID"].Visible = false;
+            this.dataGridViewTipoHabitaciones.Columns["HABITACIONID"].Visible = false;
+
         }
-        
-    
+
+
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
         {
@@ -61,6 +64,8 @@ namespace CapaPresentacion
 
             FormMantTipoHabitacion frm = new FormMantTipoHabitacion();
             frm.Operacion = "Insertar";
+            frm.MostrarHoteles();
+            frm.MostrarHabitaciones();
             frm.ShowDialog();
             MostrarTiposHabitaciones();
 
@@ -81,11 +86,13 @@ namespace CapaPresentacion
                 //EDITAR
               
                  frm.Operacion = "Editar";
+                 frm.MostrarHoteles();
+                 frm.MostrarHabitaciones();
+
                
-                
                  frm.idTipoHabitacion = dataGridViewTipoHabitaciones.CurrentRow.Cells["tipoHabitacion_id"].Value.ToString();
-                 frm.cmbHotel.Text = dataGridViewTipoHabitaciones.CurrentRow.Cells["HOTEL"].Value.ToString();
-                 frm.cmbHabitacion.Text = dataGridViewTipoHabitaciones.CurrentRow.Cells["HABITACION"].Value.ToString();
+                 frm.cmbHotel.SelectedValue = dataGridViewTipoHabitaciones.CurrentRow.Cells["HOTELID"].Value;
+                 frm.cmbHabitacion.SelectedValue = dataGridViewTipoHabitaciones.CurrentRow.Cells["HABITACIONID"].Value;
                  frm.txtDescripcion.Text = dataGridViewTipoHabitaciones.CurrentRow.Cells["DESCRIPCION"].Value.ToString();
                  frm.txtPrecio.Text = dataGridViewTipoHabitaciones.CurrentRow.Cells["PRECIO"].Value.ToString();
                  frm.txtNumeroHabitaciones.Text = dataGridViewTipoHabitaciones.CurrentRow.Cells["NUMHABITACIONES"].Value.ToString();

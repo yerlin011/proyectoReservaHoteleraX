@@ -159,7 +159,7 @@ namespace CapaDatos
 
 
 
-            sql = "SELECT tipoHabitacion_id,H.nombre AS HOTEL, HA.nombre AS HABITACION, T.descripcion AS DESCRIPCION, precio AS PRECIO, numhabitaciones AS NUMHABITACIONES FROM TipoHabitacion AS T " +
+            sql = "SELECT tipoHabitacion_id,H.nombre AS HOTEL,H.idhotel AS HOTELID, HA.nombre AS HABITACION,HA.idhabitacion AS HABITACIONID, T.descripcion AS DESCRIPCION, precio AS PRECIO, numhabitaciones AS NUMHABITACIONES FROM TipoHabitacion AS T " +
                 "INNER JOIN Hotel AS H ON H.idhotel = T.hotel_id " +
                 "INNER JOIN Habitacion AS HA ON HA.idhabitacion = T.habitacion_id " +
                 "WHERE H.nombre LIKE('" + buscar + "%') or HA.nombre LIKE('" + buscar + "%') or precio LIKE('" + buscar + "%')";
@@ -178,24 +178,6 @@ namespace CapaDatos
 
         }
 
-        /// <summary>
-        /// Metodo permite colocar un usuario en estado false
-        /// </summary>
-        /// <param name="idUsuario"></param>
-        /// <param name="estado"></param>
-        public void Deshabilitar(int idUsuario, bool estado)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "SpCambiarEstadoUsuario";
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@Id", idUsuario);
-            comando.Parameters.AddWithValue("@EstadoUsuario", estado);
-
-
-            comando.ExecuteNonQuery();
-
-            comando.Parameters.Clear();
-        }
+       
     }
 }

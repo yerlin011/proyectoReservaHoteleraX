@@ -142,7 +142,7 @@ namespace CapaDatos
 
 
             sql = "SELECT idreserva, fechainicio AS FECHAINICIO, fechafin AS FECHAFIN, precio AS PRECIO,ocupacion AS OCUPACION, nombretomador AS NOMBRETOMADOR, " +
-                "cantidad AS CANTIDAD,C.NombreCompleto AS CLIENTE,U.nombres AS USUARIO,H.nombre AS HOTEL,HA.nombre AS HABITACION FROM Reserva AS R " +
+                "cantidad AS CANTIDAD,C.NombreCompleto AS CLIENTE,R.cliente_id AS CLIENTEID, U.nombres AS USUARIO,R.usuario_id AS USUARIOID,H.nombre AS HOTEL,R.hotel_id AS HOTELID,HA.nombre AS HABITACION,R.habitacion_id AS HABITACIONID FROM Reserva AS R " +
                 "INNER JOIN Cliente AS C ON C.IdCliente = R.cliente_id " +
                 "INNER JOIN Usuario AS U ON U.idusuario = R.usuario_id " +
                 "INNER JOIN Hotel AS H ON H.idhotel = R.hotel_id " +

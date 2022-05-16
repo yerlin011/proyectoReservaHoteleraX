@@ -72,6 +72,7 @@
             this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar.FlatAppearance.BorderSize = 0;
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrar.Image = global::CapaPresentacion.Properties.Resources.interruptor;
             this.BtnCerrar.Location = new System.Drawing.Point(539, 0);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(38, 38);

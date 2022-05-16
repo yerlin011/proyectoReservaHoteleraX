@@ -46,14 +46,12 @@ namespace CapaPresentacion
         }
         private void FormMantReserva_Load(object sender, EventArgs e)
         {
-            MostrarClientes();
-            MostrarUsuarios();
-            MostrarHoteles();
-            MostrarHabitaciones();
+           
+
 
         }
 
-        private void MostrarUsuarios()
+        public void MostrarUsuarios()
         {
             CN_Usuario objeto = new CN_Usuario();
 
@@ -62,7 +60,7 @@ namespace CapaPresentacion
             cmbUsuario.ValueMember = "idusuario";
         }
 
-        private void MostrarClientes()
+        public void MostrarClientes()
         {
             CN_Cliente objeto = new CN_Cliente();
 
@@ -71,7 +69,7 @@ namespace CapaPresentacion
             cmbCliente.ValueMember = "IdCliente";
         }
 
-        private void MostrarHoteles()
+        public void MostrarHoteles()
         {
 
             CN_TipoHabitacion objeto = new CN_TipoHabitacion();
@@ -81,7 +79,7 @@ namespace CapaPresentacion
             cmbHotel.ValueMember = "idhotel";
         }
 
-        private void MostrarHabitaciones()
+        public void MostrarHabitaciones()
         {
 
             CN_TipoHabitacion objeto = new CN_TipoHabitacion();
